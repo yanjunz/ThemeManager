@@ -62,7 +62,9 @@
     
     cell.textLabel.text = item[@"title"];
     
+    // Apply theme text color for textLabel
     cell.textLabel.themeMap = @{kThemeMapKeyColorName : @"left_tabbar_cell_title"};
+    // Apply theme image for imageView
     cell.imageView.themeMap = @{kThemeMapKeyImageName : imageName};
     
     return cell;
