@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC5ABC511B2CAD2900396505 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5ABC501B2CAD2900396505 /* main.m */; };
-		EC5ABC541B2CAD2900396505 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5ABC531B2CAD2900396505 /* AppDelegate.m */; };
-		EC5ABC571B2CAD2900396505 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5ABC561B2CAD2900396505 /* ViewController.m */; };
 		EC5ABC5A1B2CAD2900396505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5ABC581B2CAD2900396505 /* Main.storyboard */; };
 		EC5ABC5C1B2CAD2900396505 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5ABC5B1B2CAD2900396505 /* Images.xcassets */; };
 		EC5ABC5F1B2CAD2900396505 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5ABC5D1B2CAD2900396505 /* LaunchScreen.xib */; };
 		EC5ABC6B1B2CAD2900396505 /* ThemeManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5ABC6A1B2CAD2900396505 /* ThemeManagerTests.m */; };
+		EC5ABC8D1B2CAD8D00396505 /* DeallocBlockExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5ABC761B2CAD8D00396505 /* DeallocBlockExecutor.m */; };
+		EC5ABC8E1B2CAD8D00396505 /* NSObject+DeallocBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5ABC781B2CAD8D00396505 /* NSObject+DeallocBlock.m */; };
+		EC5ABC8F1B2CAD8D00396505 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5ABC7B1B2CAD8D00396505 /* AppDelegate.m */; };
+		EC5ABC901B2CAD8D00396505 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5ABC7C1B2CAD8D00396505 /* main.m */; };
+		EC5ABC911B2CAD8D00396505 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5ABC7E1B2CAD8D00396505 /* ViewController.m */; };
+		EC5ABC921B2CAD8D00396505 /* SkinStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5ABC811B2CAD8D00396505 /* SkinStyle.m */; };
+		EC5ABC961B2CAD8D00396505 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5ABC8A1B2CAD8D00396505 /* ThemeManager.m */; };
+		EC5ABC971B2CAD8D00396505 /* UIView+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5ABC8C1B2CAD8D00396505 /* UIView+Theme.m */; };
+		EC5ABD571B2CAE8300396505 /* res in Resources */ = {isa = PBXBuildFile; fileRef = EC5ABD561B2CAE8300396505 /* res */; };
+		EC5ABD5A1B2CB1E800396505 /* Script in Resources */ = {isa = PBXBuildFile; fileRef = EC5ABD591B2CB1E800396505 /* Script */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,17 +36,31 @@
 /* Begin PBXFileReference section */
 		EC5ABC4B1B2CAD2900396505 /* ThemeManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC5ABC4F1B2CAD2900396505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC5ABC501B2CAD2900396505 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EC5ABC521B2CAD2900396505 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		EC5ABC531B2CAD2900396505 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EC5ABC551B2CAD2900396505 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EC5ABC561B2CAD2900396505 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EC5ABC591B2CAD2900396505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC5ABC5B1B2CAD2900396505 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC5ABC5E1B2CAD2900396505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EC5ABC641B2CAD2900396505 /* ThemeManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThemeManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC5ABC691B2CAD2900396505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC5ABC6A1B2CAD2900396505 /* ThemeManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeManagerTests.m; sourceTree = "<group>"; };
+		EC5ABC751B2CAD8D00396505 /* DeallocBlockExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeallocBlockExecutor.h; sourceTree = "<group>"; };
+		EC5ABC761B2CAD8D00396505 /* DeallocBlockExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeallocBlockExecutor.m; sourceTree = "<group>"; };
+		EC5ABC771B2CAD8D00396505 /* NSObject+DeallocBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DeallocBlock.h"; sourceTree = "<group>"; };
+		EC5ABC781B2CAD8D00396505 /* NSObject+DeallocBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DeallocBlock.m"; sourceTree = "<group>"; };
+		EC5ABC7A1B2CAD8D00396505 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EC5ABC7B1B2CAD8D00396505 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EC5ABC7C1B2CAD8D00396505 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC5ABC7D1B2CAD8D00396505 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EC5ABC7E1B2CAD8D00396505 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EC5ABC801B2CAD8D00396505 /* SkinStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinStyle.h; sourceTree = "<group>"; };
+		EC5ABC811B2CAD8D00396505 /* SkinStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinStyle.m; sourceTree = "<group>"; };
+		EC5ABC891B2CAD8D00396505 /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
+		EC5ABC8A1B2CAD8D00396505 /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
+		EC5ABC8B1B2CAD8D00396505 /* UIView+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Theme.h"; sourceTree = "<group>"; };
+		EC5ABC8C1B2CAD8D00396505 /* UIView+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Theme.m"; sourceTree = "<group>"; };
+		EC5ABC981B2CADB200396505 /* pch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pch.h; sourceTree = "<group>"; };
+		EC5ABD561B2CAE8300396505 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
+		EC5ABD581B2CAEAD00396505 /* ThemeConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeConstants.h; sourceTree = "<group>"; };
+		EC5ABD591B2CB1E800396505 /* Script */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Script; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +102,9 @@
 		EC5ABC4D1B2CAD2900396505 /* ThemeManager */ = {
 			isa = PBXGroup;
 			children = (
-				EC5ABC521B2CAD2900396505 /* AppDelegate.h */,
-				EC5ABC531B2CAD2900396505 /* AppDelegate.m */,
-				EC5ABC551B2CAD2900396505 /* ViewController.h */,
-				EC5ABC561B2CAD2900396505 /* ViewController.m */,
+				EC5ABC741B2CAD8D00396505 /* DeallocBlockExecutor */,
+				EC5ABC791B2CAD8D00396505 /* Demo */,
+				EC5ABC7F1B2CAD8D00396505 /* ThemeManager */,
 				EC5ABC581B2CAD2900396505 /* Main.storyboard */,
 				EC5ABC5B1B2CAD2900396505 /* Images.xcassets */,
 				EC5ABC5D1B2CAD2900396505 /* LaunchScreen.xib */,
@@ -96,8 +116,9 @@
 		EC5ABC4E1B2CAD2900396505 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EC5ABD591B2CB1E800396505 /* Script */,
+				EC5ABC991B2CAE6700396505 /* Resources */,
 				EC5ABC4F1B2CAD2900396505 /* Info.plist */,
-				EC5ABC501B2CAD2900396505 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -117,6 +138,52 @@
 				EC5ABC691B2CAD2900396505 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC5ABC741B2CAD8D00396505 /* DeallocBlockExecutor */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ABC751B2CAD8D00396505 /* DeallocBlockExecutor.h */,
+				EC5ABC761B2CAD8D00396505 /* DeallocBlockExecutor.m */,
+				EC5ABC771B2CAD8D00396505 /* NSObject+DeallocBlock.h */,
+				EC5ABC781B2CAD8D00396505 /* NSObject+DeallocBlock.m */,
+			);
+			path = DeallocBlockExecutor;
+			sourceTree = "<group>";
+		};
+		EC5ABC791B2CAD8D00396505 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ABC7A1B2CAD8D00396505 /* AppDelegate.h */,
+				EC5ABC7B1B2CAD8D00396505 /* AppDelegate.m */,
+				EC5ABC7C1B2CAD8D00396505 /* main.m */,
+				EC5ABC7D1B2CAD8D00396505 /* ViewController.h */,
+				EC5ABC7E1B2CAD8D00396505 /* ViewController.m */,
+				EC5ABC981B2CADB200396505 /* pch.h */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		EC5ABC7F1B2CAD8D00396505 /* ThemeManager */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ABD581B2CAEAD00396505 /* ThemeConstants.h */,
+				EC5ABC801B2CAD8D00396505 /* SkinStyle.h */,
+				EC5ABC811B2CAD8D00396505 /* SkinStyle.m */,
+				EC5ABC891B2CAD8D00396505 /* ThemeManager.h */,
+				EC5ABC8A1B2CAD8D00396505 /* ThemeManager.m */,
+				EC5ABC8B1B2CAD8D00396505 /* UIView+Theme.h */,
+				EC5ABC8C1B2CAD8D00396505 /* UIView+Theme.m */,
+			);
+			path = ThemeManager;
+			sourceTree = "<group>";
+		};
+		EC5ABC991B2CAE6700396505 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EC5ABD561B2CAE8300396505 /* res */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +266,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC5ABD5A1B2CB1E800396505 /* Script in Resources */,
 				EC5ABC5A1B2CAD2900396505 /* Main.storyboard in Resources */,
+				EC5ABD571B2CAE8300396505 /* res in Resources */,
 				EC5ABC5F1B2CAD2900396505 /* LaunchScreen.xib in Resources */,
 				EC5ABC5C1B2CAD2900396505 /* Images.xcassets in Resources */,
 			);
@@ -219,9 +288,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC5ABC571B2CAD2900396505 /* ViewController.m in Sources */,
-				EC5ABC541B2CAD2900396505 /* AppDelegate.m in Sources */,
-				EC5ABC511B2CAD2900396505 /* main.m in Sources */,
+				EC5ABC921B2CAD8D00396505 /* SkinStyle.m in Sources */,
+				EC5ABC8E1B2CAD8D00396505 /* NSObject+DeallocBlock.m in Sources */,
+				EC5ABC8D1B2CAD8D00396505 /* DeallocBlockExecutor.m in Sources */,
+				EC5ABC901B2CAD8D00396505 /* main.m in Sources */,
+				EC5ABC8F1B2CAD8D00396505 /* AppDelegate.m in Sources */,
+				EC5ABC961B2CAD8D00396505 /* ThemeManager.m in Sources */,
+				EC5ABC911B2CAD8D00396505 /* ViewController.m in Sources */,
+				EC5ABC971B2CAD8D00396505 /* UIView+Theme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = ThemeManager/Demo/pch.h;
 				INFOPLIST_FILE = ThemeManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = ThemeManager/Demo/pch.h;
 				INFOPLIST_FILE = ThemeManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
