@@ -92,6 +92,11 @@ static void *kUIView_DeallocHelper;
             obj.highlightedImage = TImage(map[kThemeMapKeyHighlightedImageName]);
         }
     }
+    else {
+        if (map[kThemeMapKeyColorName]) {
+            self.backgroundColor = TColor(map[kThemeMapKeyColorName]);
+        }
+    }
 }
 
 @end

@@ -8,10 +8,10 @@
 	<dict>
 		<key>left_tabbar_cell_title</key>
 		<string>0XFF00FF11</string>
-		<key>receipe_cell_bg</key>
-		<real>2856337472</real>
+		<key>table_bg</key>
+		<string>0XFF000000</string>
 		<key>receipe_text</key>
-		<integer>4294967295</integer>
+		<real>4294967295</real>
 	</dict>
 	<key>detail</key>
 	<string>Night</string>

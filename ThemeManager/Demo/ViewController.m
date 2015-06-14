@@ -33,6 +33,7 @@
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         tableView.delegate = self;
         tableView.dataSource = self;
+        tableView.themeMap = @{kThemeMapKeyColorName : @"table_bg"};
         [self.view addSubview:tableView];
         tableView;
     });
@@ -55,6 +56,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell.backgroundColor = [UIColor clearColor];
     }
     NSDictionary *item = self.data[indexPath.row];
     NSString *imageName = item[@"image"];
