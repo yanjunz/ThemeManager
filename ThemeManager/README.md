@@ -1,6 +1,6 @@
 # ThemeManager
 
-`ThemeManager` use Category to add theme. And it is super easy to add theme to your app without changing a lot of existed code. You can apply theme to `UIButton` and `UILabel` and `UIImageView`.
+`ThemeManager` use Category to add theme. And it is super easy to add theme to your app without changing a lot of existed code. You can apply theme to `UIButton` and `UILabel` and `UIImageView` and `UIView`.
 
 # Preparation
 
