@@ -29,7 +29,7 @@ static void *kUIView_DeallocHelper;
     if (themeMap) {
         // Need to removeObserver in dealloc
         if (objc_getAssociatedObject(self, &kUIView_DeallocHelper) == nil) {
-            __weak typeof(self) weakSelf = self;
+            __unsafe_unretained typeof(self) weakSelf = self; // NOTE: need to be __unsafe_unretained because __weak var will be reset to nil in dealloc
             id deallocHelper = [self addDeallocBlock:^{
                 [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
             }];
