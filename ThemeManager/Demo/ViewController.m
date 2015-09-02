@@ -37,6 +37,15 @@
         [self.view addSubview:tableView];
         tableView;
     });
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
+    UISlider *slider = [[UISlider alloc] initWithFrame:headerView.bounds];
+    slider.maximumValue = 100;
+    slider.minimumValue = 10;
+    slider.themeMap = @{kThemeMapKeyMinTrackTintColorName : @"slider_min",
+                        kThemeMapKeyMaxTrackTintColorName : @"slider_max",};
+    [headerView addSubview:slider];
+    self.tableView.tableHeaderView = headerView;
 }
 
 - (void)didReceiveMemoryWarning {

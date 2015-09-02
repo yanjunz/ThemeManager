@@ -6,6 +6,10 @@
 	<string>0</string>
 	<key>constant</key>
 	<dict>
+		<key>slider_min</key>
+		<string>#FF0000FF</string>
+		<key>slider_max</key>
+		<string>#FF00FF00</string>
 		<key>left_tabbar_cell_title</key>
 		<string>#FF0000FF</string>
 		<key>table_bg</key>

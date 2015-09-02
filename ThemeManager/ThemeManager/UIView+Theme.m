@@ -14,9 +14,36 @@
 NSString *kThemeMapKeyImageName             = @"kThemeMapKeyImageName";
 NSString *kThemeMapKeyHighlightedImageName  = @"kThemeMapKeyHighlightedImageName";
 NSString *kThemeMapKeySelectedImageName     = @"kThemeMapKeySelectedImageName";
+NSString *kThemeMapKeyDisabledImageName     = @"kThemeMapKeyDisabledImageName";
+
 NSString *kThemeMapKeyColorName             = @"kThemeMapKeyColorName";
 NSString *kThemeMapKeyHighlightedColorName  = @"kThemeMapKeyHighlightedColorName";
 NSString *kThemeMapKeySelectedColorName     = @"kThemeMapKeySelectedColorName";
+NSString *kThemeMapKeyDisabledColorName     = @"kThemeMapKeyDisabledColorName";
+
+NSString *kThemeMapKeyBgColorName           = @"kThemeMapKeyBgColorName";
+
+// Slider
+NSString *kThemeMapKeyMinValueImageName     = @"kThemeMapKeyMinValueImageName";
+NSString *kThemeMapKeyMaxValueImageName     = @"kThemeMapKeyMaxValueImageName";
+
+NSString *kThemeMapKeyThumbImageName        = @"kThemeMapKeyThumbImageName";
+NSString *kThemeMapKeyHighlightedThumbImageName = @"kThemeMapKeyHighlightedThumbImageName";
+NSString *kThemeMapKeyDisabledThumbImageName    = @"kThemeMapKeyDisabledThumbImageName";
+
+NSString *kThemeMapKeyMinTrackImageName     = @"kThemeMapKeyMinTrackImageName";
+NSString *kThemeMapKeyHighlightedMinTrackImageName = @"kThemeMapKeyHighlightedMinTrackImageName";
+NSString *kThemeMapKeyDisabledMinTrackImageName = @"kThemeMapKeyDisabledMinTrackImageName";
+
+NSString *kThemeMapKeyMaxTrackImageName     = @"kThemeMapKeyMaxTrackImageName";
+NSString *kThemeMapKeyHighlightedMaxTrackImageName = @"kThemeMapKeyHighlightedMaxTrackImageName";
+NSString *kThemeMapKeyDisabledMaxTrackImageName = @"kThemeMapKeyDisabledMaxTrackImageName";
+
+NSString *kThemeMapKeyMinTrackTintColorName = @"kThemeMapKeyMinTrackTintColorName";
+NSString *kThemeMapKeyMaxTrackTintColorName = @"kThemeMapKeyMaxTrackTintColorName";
+
+
+
 
 static void *kUIView_ThemeMap;
 static void *kUIView_DeallocHelper;
@@ -61,6 +88,9 @@ static void *kUIView_DeallocHelper;
         if (map[kThemeMapKeyHighlightedColorName]) {
             obj.highlightedTextColor = TColor(map[kThemeMapKeyHighlightedColorName]);
         }
+        if (map[kThemeMapKeyBgColorName]) {
+            obj.backgroundColor = TColor(map[kThemeMapKeyBgColorName]);
+        }
     }
     else if ([self isKindOfClass:[UIButton class]]) {
         UIButton *obj = (UIButton *)self;
@@ -73,6 +103,9 @@ static void *kUIView_DeallocHelper;
         if (map[kThemeMapKeySelectedColorName]) {
             [obj setTitleColor:TColor(map[kThemeMapKeySelectedColorName]) forState:UIControlStateSelected];
         }
+        if (map[kThemeMapKeyDisabledColorName]) {
+            [obj setTitleColor:TColor(map[kThemeMapKeyDisabledColorName]) forState:UIControlStateDisabled];
+        }
         if (map[kThemeMapKeyImageName]) {
             [obj setImage:TImage(map[kThemeMapKeyImageName]) forState:UIControlStateNormal];
         }
@@ -82,6 +115,12 @@ static void *kUIView_DeallocHelper;
         if (map[kThemeMapKeySelectedImageName]) {
             [obj setImage:TImage(map[kThemeMapKeySelectedImageName]) forState:UIControlStateSelected];
         }
+        if (map[kThemeMapKeyDisabledImageName]) {
+            [obj setImage:TImage(map[kThemeMapKeyDisabledImageName]) forState:UIControlStateDisabled];
+        }
+        if (map[kThemeMapKeyBgColorName]) {
+            obj.backgroundColor = TColor(map[kThemeMapKeyBgColorName]);
+        }
     }
     else if ([self isKindOfClass:[UIImageView class]]) {
         UIImageView *obj = (UIImageView *)self;
@@ -90,6 +129,67 @@ static void *kUIView_DeallocHelper;
         }
         if (map[kThemeMapKeyHighlightedImageName]) {
             obj.highlightedImage = TImage(map[kThemeMapKeyHighlightedImageName]);
+        }
+        if (map[kThemeMapKeyColorName]) {
+            obj.backgroundColor = TColor(map[kThemeMapKeyColorName]);
+        }
+    }
+    else if ([self isKindOfClass:[UISlider class]]) {
+        UISlider *obj = (UISlider *)self;
+        if (map[kThemeMapKeyMinValueImageName]) {
+            obj.minimumValueImage = TImage(map[kThemeMapKeyMinValueImageName]);
+        }
+        if (map[kThemeMapKeyMaxValueImageName]) {
+            obj.maximumValueImage = TImage(map[kThemeMapKeyMaxValueImageName]);
+        }
+        
+        if (map[kThemeMapKeyThumbImageName]) {
+            [obj setThumbImage:TImage(map[kThemeMapKeyThumbImageName]) forState:UIControlStateNormal];
+        }
+        if (map[kThemeMapKeyHighlightedThumbImageName]) {
+            [obj setThumbImage:TImage(map[kThemeMapKeyHighlightedThumbImageName]) forState:UIControlStateHighlighted];
+        }
+        if (map[kThemeMapKeyDisabledThumbImageName]) {
+            [obj setThumbImage:TImage(map[kThemeMapKeyDisabledThumbImageName]) forState:UIControlStateDisabled];
+        }
+        
+        if (map[kThemeMapKeyMinTrackImageName]) {
+            [obj setMinimumTrackImage:TImage(map[kThemeMapKeyMinTrackImageName]) forState:UIControlStateNormal];
+        }
+        if (map[kThemeMapKeyHighlightedMinTrackImageName]) {
+            [obj setMinimumTrackImage:TImage(map[kThemeMapKeyHighlightedMinTrackImageName]) forState:UIControlStateHighlighted];
+        }
+        if (map[kThemeMapKeyDisabledMinTrackImageName]) {
+            [obj setMinimumTrackImage:TImage(map[kThemeMapKeyDisabledMinTrackImageName]) forState:UIControlStateDisabled];
+        }
+        
+        if (map[kThemeMapKeyMaxTrackImageName]) {
+            [obj setMaximumTrackImage:TImage(map[kThemeMapKeyMaxTrackImageName]) forState:UIControlStateNormal];
+        }
+        if (map[kThemeMapKeyHighlightedMaxTrackImageName]) {
+            [obj setMaximumTrackImage:TImage(map[kThemeMapKeyHighlightedMaxTrackImageName]) forState:UIControlStateHighlighted];
+        }
+        if (map[kThemeMapKeyDisabledMaxTrackImageName]) {
+            [obj setMaximumTrackImage:TImage(map[kThemeMapKeyDisabledMaxTrackImageName]) forState:UIControlStateDisabled];
+        }
+        
+        if (map[kThemeMapKeyMinTrackTintColorName]) {
+            obj.minimumTrackTintColor = TColor(map[kThemeMapKeyMinTrackTintColorName]);
+        }
+        if (map[kThemeMapKeyMaxTrackTintColorName]) {
+            obj.maximumTrackTintColor = TColor(map[kThemeMapKeyMaxTrackTintColorName]);
+        }
+    }
+    else if ([self isKindOfClass:[UITextField class]]) {
+        UITextField *obj = (UITextField *)self;
+        if (map[kThemeMapKeyColorName]) {
+            obj.textColor = TColor(map[kThemeMapKeyColorName]);
+        }
+    }
+    else if ([self isKindOfClass:[UITextView class]]) {
+        UITextView *obj = (UITextView *)self;
+        if (map[kThemeMapKeyColorName]) {
+            obj.textColor = TColor(map[kThemeMapKeyColorName]);
         }
     }
     else {
