@@ -79,6 +79,19 @@ static void *kUIView_DeallocHelper;
 
 - (void)themeChanged
 {
+    // TODO: performace tuning
+    if (self.hidden) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self changeTheme];
+        });
+    }
+    else {
+        [self changeTheme];
+    }
+}
+
+- (void)changeTheme
+{
     NSDictionary *map = self.themeMap;
     if ([self isKindOfClass:[UILabel class]]) {
         UILabel *obj = (UILabel *)self;

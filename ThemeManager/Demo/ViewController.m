@@ -33,24 +33,59 @@
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         tableView.delegate = self;
         tableView.dataSource = self;
+        tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         tableView.themeMap = @{kThemeMapKeyColorName : @"table_bg"};
         [self.view addSubview:tableView];
         tableView;
     });
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
-    UISlider *slider = [[UISlider alloc] initWithFrame:headerView.bounds];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width-100, 100)];
+    headerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(0, 0, headerView.frame.size.width - 100, 100)];
+    slider.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     slider.maximumValue = 100;
     slider.minimumValue = 10;
     slider.themeMap = @{kThemeMapKeyMinTrackTintColorName : @"slider_min",
                         kThemeMapKeyMaxTrackTintColorName : @"slider_max",};
     [headerView addSubview:slider];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btn setTitle:@"Change" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(onClickAuto:) forControlEvents:UIControlEventTouchUpInside];
+    [headerView addSubview:btn];
+    btn.frame = CGRectMake(headerView.frame.size.width - 100, 0, 100, 100);
+    btn.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     self.tableView.tableHeaderView = headerView;
+    
+    /*
+     // Test Performance
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
+    footerView.backgroundColor = [UIColor grayColor];
+    for (int i = 0; i < 10000; i++) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(i * 20, 10, 20, 50)];
+        label.backgroundColor = [UIColor redColor];
+        label.themeMap = @{kThemeMapKeyColorName : @"slider_min"};
+        label.text = [@(i) stringValue];
+        label.hidden = i % 2;
+        [footerView addSubview:label];
+    }
+    self.tableView.tableFooterView = footerView;
+     */
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onClickAuto:(id)sender
+{
+    NSDate *date = [NSDate date];
+    NSInteger skinID = [ThemeManager sharedInstance].skinInstance.skinID;
+    skinID = (skinID == THEME_STYLE_CLASSIC ? THEME_STYLE_NIGHT : THEME_STYLE_CLASSIC);
+    [[ThemeManager sharedInstance] switchToStyleByID:skinID];
+    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:date];
+    NSLog(@"Time: %f", interval);
 }
 
 #pragma mark UITableViewDataSource
