@@ -54,22 +54,26 @@ static void *kUIView_DeallocHelper;
     objc_setAssociatedObject(self, &kUIView_ThemeMap, themeMap, OBJC_ASSOCIATION_COPY_NONATOMIC);
     
     if (themeMap) {
-        // Need to removeObserver in dealloc
-        if (objc_getAssociatedObject(self, &kUIView_DeallocHelper) == nil) {
-            __unsafe_unretained typeof(self) weakSelf = self; // NOTE: need to be __unsafe_unretained because __weak var will be reset to nil in dealloc
-            id deallocHelper = [self addDeallocBlock:^{
-                [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
-            }];
-            objc_setAssociatedObject(self, &kUIView_DeallocHelper, deallocHelper, OBJC_ASSOCIATION_ASSIGN);
+        @autoreleasepool {
+            // Need to removeObserver in dealloc
+            if (objc_getAssociatedObject(self, &kUIView_DeallocHelper) == nil) {
+                __unsafe_unretained typeof(self) weakSelf = self; // NOTE: need to be __unsafe_unretained because __weak var will be reset to nil in dealloc
+                id deallocHelper = [self addDeallocBlock:^{
+                    NSLog(@"deallocing %@", weakSelf);
+                    [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
+                }];
+                objc_setAssociatedObject(self, &kUIView_DeallocHelper, deallocHelper, OBJC_ASSOCIATION_ASSIGN);
+            }
+            
+            [[NSNotificationCenter defaultCenter] removeObserver:self name:kThemeDidChangeNotification object:nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeChanged) name:kThemeDidChangeNotification object:nil];
+            [self themeChanged];
         }
-        
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:kThemeDidChangeNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeChanged) name:kThemeDidChangeNotification object:nil];
-        [self themeChanged];
     }
     else {
         [[NSNotificationCenter defaultCenter] removeObserver:self name:kThemeDidChangeNotification object:nil];
     }
+    
 }
 
 - (NSDictionary *)themeMap

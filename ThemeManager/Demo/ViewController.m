@@ -10,6 +10,19 @@
 #import "ThemeManager.h"
 #import "UIView+Theme.h"
 
+@interface MyUITableViewCell : UITableViewCell
+
+@end
+
+@implementation MyUITableViewCell
+
+- (void)dealloc
+{
+    NSLog(@"dealloc");
+}
+
+@end
+
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray *data;
@@ -19,6 +32,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Test code
+    UIView *view = [MyUITableViewCell new];
+    view.themeMap = @{kThemeMapKeyColorName : @"left_tabbar_cell_title"};
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
     self.data = @[@{@"title" : @"Classic", @"image" : @"browser"},
                   @{@"title" : @"Night", @"image" : @"files"},
@@ -76,6 +94,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    self.data = @[];
+    self.tableView.delegate = nil;
+    self.tableView.dataSource = nil;
+    [self.tableView removeFromSuperview];
+    self.tableView = nil;
 }
 
 - (IBAction)onClickAuto:(id)sender
@@ -99,7 +122,7 @@
     static NSString *cellID = @"cellID";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell = [[MyUITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         cell.backgroundColor = [UIColor clearColor];
     }
     NSDictionary *item = self.data[indexPath.row];
